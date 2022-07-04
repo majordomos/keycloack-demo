@@ -6,11 +6,11 @@ let _keycloak;
 const keycloakConfig = {
     clientId: 'first-client-nodejs',
     bearerOnly: true,
-    serverUrl: 'http://localhost:8080/',
+    serverUrl: 'http://localhost:8080/auth',
     realm: 'keycloak-demo',
-    realmPublicKey: 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAug37TOwvYOp7bM8o8gu3oUSK362U4ePhRLGI7XVdTlGsfboO2zPmo6soKuuKde4MGKShR53cvvnFegqXw4DaVNeQuRsfpX1fYrsX2f+IeFNVCPAjxxnw4mes6M4lmH4tsPMIxpgSLExfxWJvgCIxCKjRubjvTbTUP/BjYOTm8q/+zuq/n49ZgU6rvrEpk3aPGIXRdri9Hlpv9Y0lWgYgRcDnM7DiPTNfsvES2r/4HMu33G9TKk4tSXOU57eWhBP9x5BTosrGpxf/ALeqqScXIgdt4jPGa9QreSj8GZN8CFNO2j0TUsFdHZNYV7ELxHNJuAp/CKzTn3AvQ6YaokEK6QIDAQAB',
+    realmPublicKey: 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqZNhfqPS/+PoPsIHPYib/fCf1FIIovOTagx9LwqiZFtBTx28vIYjjmTouezg8p/HlItQE2Ile+Kh9xXZPlAwY57zFz6kLhlV6eWYu4ANtALv+IvEICYcEPZkQ86Q9K8Lh5yCLoG8ZZi//yrFQUZXZEEf+duufMXP/ygDRNSdi5pOHDuFq8loaWmLU1vcvpVKOnlH8reYyWSb+8jRm+3C3CjXZ+xlUZVaSC8dOezMw5HtOo+fWa2/JuGGz3FVY3w10MgJCXVYJByzE/nvi688zqpzk23+ffJB4yIefAgGVDDH9jvL99I7w3EBXavXsXXzC69V/1CozzIN6/YZRFAY5wIDAQAB',
     credentials: {
-        secret: 'eCxTdBb9wCzNS23nebNo5tkMSMnF37YE'
+        secret: 'yP5l922KIBhKKZcCyV3AVGw3O66ci1ZA'
     }
 };
 
@@ -21,7 +21,7 @@ function initKeycloak() {
     } 
     else {
         console.log("Initializing Keycloak...");
-        var memoryStore = new session.MemoryStore();
+        var memoryStore = new session.MemoryStore(); 
         _keycloak = new Keycloak({ store: memoryStore }, keycloakConfig);
         return _keycloak;
     }

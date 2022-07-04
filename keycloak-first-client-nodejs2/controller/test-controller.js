@@ -10,15 +10,15 @@ router.get('/check-sso', keycloak.checkSso(), (req, res) => {
     res.send('Sso checked2');
 });
 
-router.get('/user', keycloak.protect('user'), (req, res) => {
+router.get('/user', keycloak.protect('user2'), (req, res) => {
     res.send("Hello User2");
 });
 
-router.get('/admin', keycloak.protect('admin'), (req, res) => {
+router.get('/admin', keycloak.protect('admin2'), (req, res) => {
     res.send("Hello Admin2");
 });
 
-router.get('/all-user', keycloak.protect(['user', 'admin']), (req, res) => {
+router.get('/all-user', keycloak.protect(['user2', 'admin2']), (req, res) => {
     res.send("Hello All User2");
 });
 
